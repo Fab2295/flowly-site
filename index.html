@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Flowly — hidratação que entende o seu dia</title>
+  <meta name="description" content="Flowly é um app de hidratação para iPhone e Apple Watch: cada bebida conta o que vale de verdade, e a meta muda com o clima.">
+  <meta name="theme-color" content="#EAF3FF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#04111F" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Flowly — hidratação que entende o seu dia">
+  <meta property="og:description" content="Cada bebida conta o que vale de verdade, e a meta muda com o clima.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="./" aria-label="Flowly, início">
+      <img src="assets/icon.svg" alt="" width="28" height="28">
+      <span>Flowly</span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="#recursos">Recursos</a>
+      <a href="suporte.html">Suporte</a>
+      <a href="privacidade.html">Privacidade</a>
+    </nav>
+    <a class="download" href="#baixar">Baixar</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <span class="heat">32°C hoje · meta +300 ml</span>
+        <h1>Hidratação que sabe que hoje está mais quente que ontem</h1>
+        <p class="lede">Cada bebida conta o que vale de verdade, e a meta muda com o clima.</p>
+        <div class="cta-row" id="baixar">
+          <a class="cta" href="#baixar" aria-describedby="cta-note">
+            <svg viewBox="0 0 17 20" width="14" height="16" aria-hidden="true"><path fill="currentColor" d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.6-1-2.6-3.9zM11.6 3c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
+            Baixar na App Store
+          </a>
+          <span class="cta-note" id="cta-note">Em breve · iPhone e Apple Watch</span>
+        </div>
+      </div>
+
+      <div class="stage" id="copo">
+        <div class="label label-raw" id="label-raw">
+          <strong>1.200 ml</strong>
+          <span>bebidos · 52%</span>
+        </div>
+        <div class="label label-eff" id="label-eff">
+          <strong>685 ml</strong>
+          <span>efetivos · 30%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="recursos" aria-labelledby="recursos-title">
+      <h2 id="recursos-title">Feito para o que você bebe de verdade</h2>
+      <div class="grid">
+        <article>
+          <h3>Hidratação efetiva</h3>
+          <p>Água conta 100%, chá 90%, café 60%. Cerveja desconta. O número grande é o que de fato hidratou.</p>
+        </article>
+        <article>
+          <h3>Meta pelo clima</h3>
+          <p>Dia quente, meta maior. Somamos também os treinos do app Saúde.</p>
+        </article>
+        <article>
+          <h3>Registro em um toque</h3>
+          <p>Na tela inicial, no widget, no Dynamic Island e no Apple Watch, girando a coroa.</p>
+        </article>
+        <article>
+          <h3>Seus dados ficam com você</h3>
+          <p>Tudo fica no aparelho. Sem conta, sem servidor, sem anúncios.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Flowly</span>
+    <nav aria-label="Rodapé">
+      <a href="suporte.html">Suporte</a>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="termos.html">Termos</a>
+    </nav>
+  </footer>
+
+  <script type="module">
+    import { mount } from './js/flowly-3d.js';
+
+    const stage = document.querySelector('#copo');
+    try {
+      await mount(stage, {
+        level: 0.30,
+        raw: 0.52,
+        labels: { eff: document.querySelector('#label-eff'), raw: document.querySelector('#label-raw') },
+      });
+      stage.classList.add('is-ready');
+    } catch (error) {
+      stage.classList.add('is-fallback');
+      console.warn('Flowly 3D indisponível', error);
+    }
+  </script>
+</body>
+</html>
