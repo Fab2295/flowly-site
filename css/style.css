@@ -173,7 +173,7 @@ h1 {
 /* Recursos */
 .features { padding: 40px 64px 96px; max-width: 1200px; }
 .features h2 { font-size: 34px; letter-spacing: -.025em; margin: 0 0 28px; }
-.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .grid article { background: var(--surface); border-radius: 20px; padding: 22px; }
 .grid h3 { margin: 0 0 8px; font-size: 17px; }
 .grid p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--secondary); }
