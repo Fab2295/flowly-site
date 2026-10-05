@@ -178,6 +178,37 @@ h1 {
 .grid h3 { margin: 0 0 8px; font-size: 17px; }
 .grid p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--secondary); }
 
+.section-lede { margin: -12px 0 24px; max-width: 640px; font-size: 17px; line-height: 1.45; color: var(--secondary); }
+.grid a { color: var(--accent); }
+.grid-single { grid-template-columns: 1fr; max-width: 760px; }
+
+.tag {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(10, 122, 255, .12);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Planos */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 900px; }
+.plan { background: var(--surface); border-radius: 24px; padding: 26px; }
+.plan h3 { margin: 0 0 6px; font-size: 20px; }
+.plan .price { margin: 0; font-size: 34px; font-weight: 700; letter-spacing: -.03em; }
+.plan .price span { font-size: 15px; font-weight: 500; color: var(--secondary); }
+.plan .price-alt { margin: 4px 0 0; font-size: 14px; color: var(--secondary); }
+.plan ul { margin: 18px 0 0; padding: 0; list-style: none; }
+.plan li { position: relative; padding: 7px 0 7px 26px; font-size: 15px; border-top: 1px solid var(--separator); }
+.plan li::before { content: "✓"; position: absolute; left: 2px; color: var(--accent); font-weight: 700; }
+.plan-pro { box-shadow: inset 0 0 0 2px var(--accent); }
+.ads-note { margin-top: 18px; padding: 16px; border-radius: 16px; background: var(--bg); }
+.ads-note strong { font-size: 15px; }
+.ads-note p { margin: 6px 0 0; font-size: 14px; line-height: 1.45; color: var(--secondary); }
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -245,6 +276,8 @@ h1 {
   .features { padding: 8px 20px 40px; }
   .features h2 { font-size: 28px; }
   .grid { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr; }
+  .section-lede { margin-top: -8px; }
 
   .footer { flex-direction: column; padding: 24px 20px 140px; }
   .doc h1 { font-size: 32px; }
